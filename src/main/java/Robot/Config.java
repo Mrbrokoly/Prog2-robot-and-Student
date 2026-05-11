@@ -9,7 +9,7 @@ public class Config {
     String[] directions = {"N", "E", "S", "W"};
 
     Config(int x, int y, String direction) {
-        this.x         = x;
+        this.x     = x;
         this.y         = y;
         this.direction = direction;
     }
@@ -35,3 +35,5 @@ public class Config {
         System.out.println("Position : (" + x + ", " + y + ")  Direction : " + direction);
     }
 }
+
+
