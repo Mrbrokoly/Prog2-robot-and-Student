@@ -2,14 +2,14 @@ package Robot;
 
 public class Config {
 
-    int x;
-    int y;
-    String direction;
+    private int x;
+    private int y;
+    private String direction;
 
     String[] directions = {"N", "E", "S", "W"};
 
     Config(int x, int y, String direction) {
-        this.x     = x;
+        this.x         = x;
         this.y         = y;
         this.direction = direction;
     }
@@ -31,9 +31,17 @@ public class Config {
         direction = directions[(index + 1) % 4];
     }
 
+    void tournerGauche() {
+        int index = 0;
+        for (int i = 0; i < directions.length; i++) {
+            if (directions[i].equals(direction)) {
+                index = i;
+            }
+        }
+        direction = directions[(index + 3) % 4];
+    }
+
     void afficherPosition() {
-        System.out.println("Position : (" + x + ", " + y + ")  Direction : " + direction);
+        System.out.println("Position : (" + x + ", " + y + ") Direction : " + direction);
     }
 }
-
-
